@@ -25,4 +25,18 @@ public class ItemServiceImpl implements ItemService {
 		return this.itemDao.selectDetail(map);
 	}
 
+	@Override
+	public boolean edit(Map<String, Object> map) {
+		int affectRowCount = this.itemDao.update(map);
+		return affectRowCount == 1;
+
+	}
+
+	@Override
+	public boolean remove(Map<String, Object> map) {
+		int affectRowCount = this.itemDao.delete(map);
+		return affectRowCount == 1;
+
+	}
+
 }

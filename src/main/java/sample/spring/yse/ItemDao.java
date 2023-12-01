@@ -19,4 +19,12 @@ public class ItemDao {
 		return this.sqlSessionTemplate.selectOne("item.select_detail", map);
 	}
 
+	public int update(Map<String, Object> map) {
+		return this.sqlSessionTemplate.update("item.update", map);
+	}
+
+	public int delete(Map<String, Object> map) {
+		return this.sqlSessionTemplate.delete("item.delete", map);
+	}
+
 }

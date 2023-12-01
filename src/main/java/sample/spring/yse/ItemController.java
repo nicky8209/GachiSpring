@@ -55,4 +55,34 @@ public class ItemController {
 		return mav;
 	}
 
+	@RequestMapping(value = "update", method = RequestMethod.POST)
+	public ModelAndView updatePost(@RequestParam Map<String, Object> map) {
+		ModelAndView mav = new ModelAndView();
+
+		boolean isUpdateSuccess = this.itemService.edit(map);
+		if (isUpdateSuccess) {
+			String itemId = map.get("itemId").toString();
+			mav.setViewName("redirect:/detail?itemId=" + itemId);
+		} else {
+			mav = this.update(map);
+		}
+
+		return mav;
+	}
+
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	public ModelAndView deletePost(@RequestParam Map<String, Object> map) {
+		ModelAndView mav = new ModelAndView();
+
+		boolean isDeleteSuccess = this.itemService.remove(map);
+		if (isDeleteSuccess) {
+			mav.setViewName("redirect:/list");
+		} else {
+			String itemId = map.get("itemId").toString();
+			mav.setViewName("redirect:/detail?itemId=" + itemId);
+		}
+
+		return mav;
+	}
+
 }

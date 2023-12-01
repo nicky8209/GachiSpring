@@ -24,5 +24,22 @@
 	        item_id = #{itemId}			
 	    ]]>
 	</select>
+	<update id="update" parameterType="hashMap">
+	    <![CDATA[
+	        update item set 
+	        title = #{title},
+	        category = #{category},
+	        price = #{price}
+	        where
+	        item_id = #{itemId}
+	    ]]>
+	</update>
+	<delete id="delete" parameterType="hashMap">
+		<![CDATA[
+		        delete from item
+		        where
+		        item_id = #{itemId}
+		    ]]>
+	</delete>
 
 </mapper>

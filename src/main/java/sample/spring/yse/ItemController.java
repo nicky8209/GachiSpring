@@ -33,4 +33,16 @@ public class ItemController {
 		return mav;
 	}
 
+	@RequestMapping(value = "/detail", method = RequestMethod.GET)
+	public ModelAndView detail(@RequestParam Map<String, Object> map) {
+		Map<String, Object> detailMap = this.itemService.detail(map);
+
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("data", detailMap);
+		String itemId = map.get("itemId").toString();
+		mav.addObject("itemId", itemId);
+		mav.setViewName("/item/detail");
+		return mav;
+	}
+
 }

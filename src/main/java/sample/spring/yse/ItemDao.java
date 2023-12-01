@@ -14,4 +14,9 @@ public class ItemDao {
 	public int insert(Map<String, Object> map) {
 		return this.sqlSessionTemplate.insert("item.insert", map);
 	}
+
+	public Map<String, Object> selectDetail(Map<String, Object> map) {
+		return this.sqlSessionTemplate.selectOne("item.select_detail", map);
+	}
+
 }

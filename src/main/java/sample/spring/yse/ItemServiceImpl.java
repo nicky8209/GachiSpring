@@ -20,4 +20,9 @@ public class ItemServiceImpl implements ItemService {
 
 	}
 
+	@Override
+	public Map<String, Object> detail(Map<String, Object> map) {
+		return this.itemDao.selectDetail(map);
+	}
+
 }

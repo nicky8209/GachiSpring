@@ -42,4 +42,18 @@
 		    ]]>
 	</delete>
 
+	<select id="select_list" parameterType="hashMap" resultType="hashMap">
+	    <![CDATA[
+	        select
+	        item_id,
+	        title,
+	        category,
+	        price,
+	        insert_date
+	        from
+	        item			
+	        order by insert_date desc									
+	    ]]>
+	</select>	
+
 </mapper>

@@ -1,5 +1,6 @@
 package sample.spring.yse;
 
+import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -25,6 +26,10 @@ public class ItemDao {
 
 	public int delete(Map<String, Object> map) {
 		return this.sqlSessionTemplate.delete("item.delete", map);
+	}
+
+	public List<Map<String, Object>> selectList(Map<String, Object> map) {
+		return this.sqlSessionTemplate.selectList("item.select_list", map);
 	}
 
 }

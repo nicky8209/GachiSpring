@@ -1,5 +1,6 @@
 package sample.spring.yse;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,6 +83,17 @@ public class ItemController {
 			mav.setViewName("redirect:/detail?itemId=" + itemId);
 		}
 
+		return mav;
+	}
+
+	@RequestMapping(value = "list")
+	public ModelAndView list(@RequestParam Map<String, Object> map) {
+
+		List<Map<String, Object>> list = this.itemService.list(map);
+
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("data", list);
+		mav.setViewName("/item/list");
 		return mav;
 	}
 

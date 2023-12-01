@@ -12,10 +12,10 @@
 		<p>입력일 : <fmt:formatDate value="${data.insert_date}" pattern="yyyy.MM.dd HH:mm:ss" /></p>
 		
 		<p>
-			<a href="/update?bookId=${bookId}">수정</a>
+			<a href="/update?itemId=${itemId}">수정</a>
 		</p>
 		<form method="POST" action="/delete">
-			<input type="hidden" name="bookId" value="${bookId}" />
+			<input type="hidden" name="itemId" value="${itemId}" />
 			<input type="submit" value="삭제" />
 		</form>
 		<p>

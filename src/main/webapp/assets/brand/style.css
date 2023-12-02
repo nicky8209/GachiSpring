@@ -1,0 +1,13 @@
+@font-face {
+	font-family: 'Jalnan';
+	src: url('Jalnan.ttf') format('woff'),
+		url('Jalnan.ttf') format('woff2');
+	/* 이런식으로 weight를 지정해서 사용할 수도 있다!*/
+	font-weight: 400;
+}
+
+body {
+	font-family: 'Jalnan', sans-serif;
+	background-color: #fff3cd;
+
+}

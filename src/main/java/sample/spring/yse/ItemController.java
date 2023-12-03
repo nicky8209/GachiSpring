@@ -97,4 +97,23 @@ public class ItemController {
 		return mav;
 	}
 
+	@RequestMapping(value = "/join", method = RequestMethod.GET)
+	public ModelAndView join() {
+		return new ModelAndView("member/join");
+	}
+
+	@RequestMapping(value = "/join", method = RequestMethod.POST)
+	public ModelAndView joinMember(@RequestParam Map<String, Object> map) {
+		ModelAndView mav = new ModelAndView();
+
+		String bookId = this.itemService.join(map);
+		if (bookId == null) {
+			mav.setViewName("redirect:/create");
+		} else {
+			mav.setViewName("redirect:/join");
+		}
+
+		return mav;
+	}
+
 }

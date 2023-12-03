@@ -12,8 +12,8 @@ public class ItemDao {
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
 
-	public int insert(Map<String, Object> map) {
-		return this.sqlSessionTemplate.insert("item.insert", map);
+	public int insert(Map<String, Object> map, String sql) {
+		return this.sqlSessionTemplate.insert(sql, map);
 	}
 
 	public Map<String, Object> selectDetail(Map<String, Object> map) {

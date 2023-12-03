@@ -15,4 +15,6 @@ public interface ItemService {
 
 	List<Map<String, Object>> list(Map<String, Object> map);
 
+	String join(Map<String, Object> map);
+
 }

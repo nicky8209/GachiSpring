@@ -13,7 +13,7 @@ public class ItemServiceImpl implements ItemService {
 
 	@Override
 	public String create(Map<String, Object> map) {
-		int affectRowCount = this.itemDao.insert(map);
+		int affectRowCount = this.itemDao.insert(map, "item.insert");
 		if (affectRowCount == 1) {
 			return map.get("item_id").toString();
 		}
@@ -45,4 +45,13 @@ public class ItemServiceImpl implements ItemService {
 		return this.itemDao.selectList(map);
 	}
 
+	@Override
+	public String join(Map<String, Object> map) {
+		int affectRowCount = this.itemDao.insert(map, "member.insert");
+		if (affectRowCount == 1) {
+			return map.get("id").toString();
+		}
+		return null;
+
+	}
 }

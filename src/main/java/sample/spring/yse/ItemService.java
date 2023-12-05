@@ -19,4 +19,6 @@ public interface ItemService {
 
 	Map<String, Object> login(Map<String, Object> map);
 
+	Map<String, Object> salt(Map<String, Object> map);
+
 }

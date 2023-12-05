@@ -59,4 +59,9 @@ public class ItemServiceImpl implements ItemService {
 	public Map<String, Object> login(Map<String, Object> map) {
 		return this.itemDao.login(map);
 	}
+
+	@Override
+	public Map<String, Object> salt(Map<String, Object> map) {
+		return this.itemDao.salt(map);
+	}
 }

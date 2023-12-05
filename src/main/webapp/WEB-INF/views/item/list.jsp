@@ -176,7 +176,7 @@
         <div class="text-end">
         <c:if test="${member == null}">
           <a href="/login" class="btn btn-light text-dark me-2">로그인</a>
-          <a href="/join" class="btn btn-primary">가입하기</a>
+          <a href="/join" class="btn btn-outline-primary">가입하기</a>
           </c:if>
 
         <c:if test="${member != null}">

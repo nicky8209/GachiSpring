@@ -15,12 +15,25 @@
 	    <![CDATA[
 	        select
 	        id,
+	        salt,
 		name
 	        from
 	        accounts
 	        where
 	        email = #{email}			
 	        and password = #{password}			
+	    ]]>
+	</select>
+	<select id="salt" parameterType="hashMap"
+		resultType="hashMap">
+	    <![CDATA[
+	        select
+	        id,
+		salt
+	        from
+	        accounts
+	        where
+	        email = #{email}			
 	    ]]>
 	</select>
 </mapper>

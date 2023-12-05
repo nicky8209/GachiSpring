@@ -116,11 +116,11 @@ public class ItemController {
 
 		String pwd = map.get("password").toString();
 
-		String r = LoginCrypto.hexSha1(pwd);
-		String d = LoginCrypto.makeSalt();
+		String i = LoginCrypto.makeSalt();
+		String j = LoginCrypto.hexSha1(pwd + i);
 
-		map.put("password", r);
-		map.put("salt", d);
+		map.put("salt", i);
+		map.put("password", j);
 
 		String bookId = this.itemService.join(map);
 		if (bookId == null) {
@@ -129,7 +129,6 @@ public class ItemController {
 			mav.setViewName("redirect:/join");
 		}
 
-		System.out.println(map);
 		return mav;
 	}
 
@@ -146,11 +145,11 @@ public class ItemController {
 
 		String pwd = map.get("password").toString();
 
-		String r = LoginCrypto.hexSha1(pwd);
-		String d = LoginCrypto.makeSalt();
+		Map<String, Object> salt = this.itemService.salt(map);
 
-//		map.put("password", r);
-//		map.put("salt", d);
+		String passsalt = LoginCrypto.hexSha1(pwd + salt.get("salt"));
+
+		map.put("password", passsalt);
 
 		Map<String, Object> login = this.itemService.login(map);
 

@@ -170,6 +170,8 @@
 
 	<main class="container">
 		<div class="row mb-2">
+		<c:choose>
+		  <c:when test="${not empty data}">
 			<c:forEach var="row" items="${data}">
 	<div class="col-md-12">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -189,6 +191,12 @@
       </div>
     </div>
 			</c:forEach>
+    </c:when>
+    <c:otherwise>
+        <h1>:(</h1>
+        <p>아이템이 없어요. 첫 게시글을 업로드해 보세요.</p>
+    </c:otherwise>
+</c:choose>
     </div>
   </main>
   <footer class="pt-5 my-5 text-body-secondary border-top">

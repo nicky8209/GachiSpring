@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="item">
 	<insert id="insert" parameterType="hashMap"
 		useGeneratedKeys="true" keyProperty="item_id">		
@@ -41,19 +41,23 @@
 		        item_id = #{itemId}
 		    ]]>
 	</delete>
-
+			
 	<select id="select_list" parameterType="hashMap" resultType="hashMap">
-	    <![CDATA[
-	        select
-	        item_id,
-	        title,
-	        category,
-	        price,
-	        insert_date
-	        from
-	        item			
-	        order by insert_date desc									
+	  <![CDATA[
+	    select
+	    item_id,
+	    title,
+	    category,
+	    price,
+	    insert_date
+	    from
+	    item
+	    where 1 = 1
 	    ]]>
+	    <if test="keyword != null and keyword != ''">
+	      and (title like CONCAT('%',#{keyword},'%') or category like CONCAT('%',#{keyword},'%'))
+	    </if>
+	    order by insert_date desc
 	</select>	
 
 </mapper>

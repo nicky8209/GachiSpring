@@ -54,4 +54,9 @@ public class ItemServiceImpl implements ItemService {
 		return null;
 
 	}
+
+	@Override
+	public Map<String, Object> login(Map<String, Object> map) {
+		return this.itemDao.login(map);
+	}
 }

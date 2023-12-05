@@ -32,4 +32,8 @@ public class ItemDao {
 		return this.sqlSessionTemplate.selectList("item.select_list", map);
 	}
 
+	public Map<String, Object> login(Map<String, Object> map) {
+		return this.sqlSessionTemplate.selectOne("member.login", map);
+	}
+
 }

@@ -163,7 +163,6 @@
 
     <div class="row g-5">
       <div class="col-md-12 col-lg-12">
-        <h4 class="mb-3">Billing address</h4>
         <form method="POST" class="needs-validation" novalidate>
           <div class="row g-3">
             <div class="col-12">
@@ -182,36 +181,13 @@
               </div>
             </div>
 
-            <div class="col-md-5">
-              <label for="country" class="form-label">Country</label>
-              <select class="form-select" id="country">
-                <option value="">Choose...</option>
-                <option>United States</option>
-              </select>
+            <div class="col-12">
+              <label for="username" class="form-label">닉네임</label>
+              <input type="text" class="form-control" id="username" placeholder="" name="username" required>
               <div class="invalid-feedback">
-                Please select a valid country.
+                Please enter a valid email address for shipping updates.
               </div>
             </div>
-
-            <div class="col-md-4">
-              <label for="state" class="form-label">State</label>
-              <select class="form-select" id="state">
-                <option value="">Choose...</option>
-                <option>California</option>
-              </select>
-              <div class="invalid-feedback">
-                Please provide a valid state.
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="zip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="zip" placeholder="">
-              <div class="invalid-feedback">
-                Zip code required.
-              </div>
-            </div>
-          </div>
 
           <hr class="my-4">
 

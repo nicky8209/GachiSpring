@@ -5,9 +5,22 @@
 		keyProperty="id">  
     <![CDATA[
     insert into accounts
-    (email, password, salt) 
+    (email, password, salt, name) 
     values
-    (#{email}, #{password}, #{salt})
+    (#{email}, #{password}, #{salt}, #{username})
     ]]>
 </insert>
+	<select id="login" parameterType="hashMap"
+		resultType="hashMap">
+	    <![CDATA[
+	        select
+	        id,
+		name
+	        from
+	        accounts
+	        where
+	        email = #{email}			
+	        and password = #{password}			
+	    ]]>
+	</select>
 </mapper>

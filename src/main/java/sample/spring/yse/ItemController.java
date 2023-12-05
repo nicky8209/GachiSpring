@@ -3,6 +3,9 @@ package sample.spring.yse;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -127,6 +130,50 @@ public class ItemController {
 		}
 
 		System.out.println(map);
+		return mav;
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView login() {
+		return new ModelAndView("member/login");
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public ModelAndView loginMember(@RequestParam Map<String, Object> map, HttpServletRequest req) throws Exception {
+		ModelAndView mav = new ModelAndView();
+
+		HttpSession session = req.getSession();
+
+		String pwd = map.get("password").toString();
+
+		String r = LoginCrypto.hexSha1(pwd);
+		String d = LoginCrypto.makeSalt();
+
+//		map.put("password", r);
+//		map.put("salt", d);
+
+		Map<String, Object> login = this.itemService.login(map);
+
+		if (login == null) {
+			session.setAttribute("member", null);
+			mav.setViewName("redirect:/login");
+
+		} else {
+			session.setAttribute("member", login);
+			mav.setViewName("redirect:/list");
+
+		}
+
+		return mav;
+	}
+
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public ModelAndView logout(HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+
+		session.invalidate();
+		mav.setViewName("redirect:/list");
+
 		return mav;
 	}
 

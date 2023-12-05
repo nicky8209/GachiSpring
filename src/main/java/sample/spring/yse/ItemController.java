@@ -106,12 +106,12 @@ public class ItemController {
 	public ModelAndView joinMember(@RequestParam Map<String, Object> map) {
 		ModelAndView mav = new ModelAndView();
 
-		String pwd = map.get("pass").toString();
+		String pwd = map.get("password").toString();
 
 		String r = LoginCrypto.hexSha1(pwd);
 		String d = LoginCrypto.makeSalt();
 
-		map.put("pass", r);
+		map.put("password", r);
 		map.put("salt", d);
 
 		String bookId = this.itemService.join(map);

@@ -166,6 +166,17 @@
 
       <span class="fs-4">가치</span>
     </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        </form>
+
+        <div class="text-end">
+          <a href="/create" class="btn btn-light text-dark me-2">글쓰기</a>
+          <a href="/join" class="btn btn-primary">가입하기</a>
+        </div>
   </header>
 
 	<main class="container">

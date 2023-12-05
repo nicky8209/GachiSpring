@@ -5,9 +5,9 @@
 		keyProperty="id">  
     <![CDATA[
     insert into accounts
-    (name, password, email, salt) 
+    (email, password, salt) 
     values
-    (#{name}, #{pass}, #{email}, #{salt})
+    (#{email}, #{password}, #{salt})
     ]]>
 </insert>
 </mapper>

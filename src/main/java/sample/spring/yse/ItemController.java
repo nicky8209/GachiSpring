@@ -41,10 +41,14 @@ public class ItemController {
 	public ModelAndView detail(@RequestParam Map<String, Object> map) {
 		Map<String, Object> detailMap = this.itemService.detail(map);
 
+		Map<String, Object> cid = this.itemService.postercid(detailMap);
+
 		ModelAndView mav = new ModelAndView();
+
 		mav.addObject("data", detailMap);
 		String itemId = map.get("itemId").toString();
 		mav.addObject("itemId", itemId);
+		mav.addObject("name", cid);
 		mav.setViewName("/item/detail");
 		return mav;
 	}
@@ -116,17 +120,25 @@ public class ItemController {
 
 		String pwd = map.get("password").toString();
 
-		String i = LoginCrypto.makeSalt();
-		String j = LoginCrypto.hexSha1(pwd + i);
+		Map<String, Object> check = this.itemService.check(map);
 
-		map.put("salt", i);
-		map.put("password", j);
-
-		String bookId = this.itemService.join(map);
-		if (bookId == null) {
-			mav.setViewName("redirect:/create");
-		} else {
+		if (check != null) {
 			mav.setViewName("redirect:/join");
+
+		} else {
+			String i = LoginCrypto.makeSalt();
+			String j = LoginCrypto.hexSha1(pwd + i);
+
+			map.put("salt", i);
+			map.put("password", j);
+
+			String bookId = this.itemService.join(map);
+			if (bookId == null) {
+				mav.setViewName("redirect:/create");
+			} else {
+				mav.setViewName("redirect:/join");
+			}
+
 		}
 
 		return mav;
@@ -147,19 +159,25 @@ public class ItemController {
 
 		Map<String, Object> salt = this.itemService.salt(map);
 
-		String passsalt = LoginCrypto.hexSha1(pwd + salt.get("salt"));
-
-		map.put("password", passsalt);
-
-		Map<String, Object> login = this.itemService.login(map);
-
-		if (login == null) {
-			session.setAttribute("member", null);
+		if (salt == null) {
 			mav.setViewName("redirect:/login");
 
 		} else {
-			session.setAttribute("member", login);
-			mav.setViewName("redirect:/list");
+			String passsalt = LoginCrypto.hexSha1(pwd + salt.get("salt"));
+
+			map.put("password", passsalt);
+
+			Map<String, Object> login = this.itemService.login(map);
+
+			if (login == null) {
+				session.setAttribute("member", null);
+				mav.setViewName("redirect:/login");
+
+			} else {
+				session.setAttribute("member", login);
+				mav.setViewName("redirect:/list");
+
+			}
 
 		}
 

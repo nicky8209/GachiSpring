@@ -36,4 +36,27 @@
 	        email = #{email}			
 	    ]]>
 	</select>
+	<select id="check" parameterType="hashMap"
+		resultType="hashMap">
+	    <![CDATA[
+	        select
+		email
+	        from
+	        accounts
+	        where
+	        email = #{email}			
+	    ]]>
+	</select>
+	<select id="postercid" parameterType="hashMap"
+		resultType="hashMap">
+	    <![CDATA[
+	        select
+		name
+	        from
+	        accounts
+	        where
+	        id = #{postercid}			
+	    ]]>
+	</select>
+	
 </mapper>

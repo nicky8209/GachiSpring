@@ -21,4 +21,8 @@ public interface ItemService {
 
 	Map<String, Object> salt(Map<String, Object> map);
 
+	Map<String, Object> check(Map<String, Object> map);
+
+	Map<String, Object> postercid(Map<String, Object> map);
+
 }

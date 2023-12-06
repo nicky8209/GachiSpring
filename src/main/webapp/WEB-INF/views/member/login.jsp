@@ -158,12 +158,11 @@
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="${pageContext.request.contextPath}/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
       <h2>로그인</h2>
-      <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+
     </div>
 
     <div class="row g-5">
       <div class="col-md-12 col-lg-12">
-        <h4 class="mb-3">Billing address</h4>
         <form method="POST" class="needs-validation" novalidate>
           <div class="row g-3">
             <div class="col-12">
@@ -181,37 +180,6 @@
                 Please enter your shipping address.
               </div>
             </div>
-
-            <div class="col-md-5">
-              <label for="country" class="form-label">Country</label>
-              <select class="form-select" id="country">
-                <option value="">Choose...</option>
-                <option>United States</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid country.
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <label for="state" class="form-label">State</label>
-              <select class="form-select" id="state">
-                <option value="">Choose...</option>
-                <option>California</option>
-              </select>
-              <div class="invalid-feedback">
-                Please provide a valid state.
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="zip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="zip" placeholder="">
-              <div class="invalid-feedback">
-                Zip code required.
-              </div>
-            </div>
-          </div>
 
           <hr class="my-4">
 

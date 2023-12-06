@@ -64,4 +64,14 @@ public class ItemServiceImpl implements ItemService {
 	public Map<String, Object> salt(Map<String, Object> map) {
 		return this.itemDao.salt(map);
 	}
+
+	@Override
+	public Map<String, Object> check(Map<String, Object> map) {
+		return this.itemDao.check(map);
+	}
+
+	@Override
+	public Map<String, Object> postercid(Map<String, Object> map) {
+		return this.itemDao.postercid(map);
+	}
 }

@@ -39,4 +39,12 @@ public class ItemDao {
 		return this.sqlSessionTemplate.selectOne("member.salt", map);
 	}
 
+	public Map<String, Object> check(Map<String, Object> map) {
+		return this.sqlSessionTemplate.selectOne("member.check", map);
+	}
+
+	public Map<String, Object> postercid(Map<String, Object> map) {
+		return this.sqlSessionTemplate.selectOne("member.postercid", map);
+	}
+
 }

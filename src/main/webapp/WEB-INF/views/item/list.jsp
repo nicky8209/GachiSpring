@@ -161,13 +161,11 @@
 </svg>
 
 <div class="col-lg-8 mx-auto p-4 py-md-5">
-  <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
-    <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
 
-      <span class="fs-4">가치</span>
-    </a>
-
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">        </ul>
+        <span class="fs-4">가치</span>
+      </a>
 
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
           <input type="search" class="form-control" placeholder="Search..." name="keyword" value="${keyword}" aria-label="Search">
@@ -184,8 +182,7 @@
           <a href="/create" class="btn btn-primary">글쓰기</a>
           </c:if>
         </div>
-
-  </header>
+    </header>
 
 	<main class="container">
 		<div class="row mb-2">

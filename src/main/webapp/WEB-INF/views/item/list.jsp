@@ -162,9 +162,9 @@
 
 <div class="col-lg-8 mx-auto p-4 py-md-5">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+      <a href="/list" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
 
-        <span class="fs-4">가치</span>
+        <span class="fs-4 brand-logo">가치</span>
       </a>
 
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">

@@ -160,17 +160,17 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
-      <h3 class="float-md-start mb-0">가치</h3>
+      <h3 class="float-md-start mb-0 brand-logo">가치</h3>
 
     </div>
   </header>
 
   <main class="px-3">
-    <p class="lead">한 개를 사면 비싸고..</p>
-    <p class="lead">그렇다고 많이 사기엔 유통기한이 걱정되고..</p>
-    <p class="lead">좋은 방법이 없을까?</p>
-    <p class="lead">가치에서 동네 친구들과 같이 사보세요!</p>
-    <p class="lead"><br /></p>
+    <p class="lead brand-logo">한 개를 사면 비싸고..</p>
+    <p class="lead brand-logo">그렇다고 많이 사기엔 유통기한이 걱정되고..</p>
+    <p class="lead brand-logo">좋은 방법이 없을까?</p>
+    <p class="lead brand-logo">가치에서 동네 친구들과 같이 사보세요!</p>
+    <p class="lead brand-logo"><br /></p>
 
     <p class="lead">
       <a href="../list" class="btn btn-lg btn-light fw-bold border-white bg-white">시작하기</a>

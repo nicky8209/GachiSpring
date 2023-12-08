@@ -18,7 +18,12 @@
 	        title,
 	        category,
 	        price,
-		insert_date
+	        insert_date,
+	        upload1,
+	        upload2,
+	        upload3,
+	        upload4,	        
+        upload5
 	        from
 	        item
 	        where

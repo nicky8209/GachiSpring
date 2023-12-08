@@ -193,12 +193,34 @@
         </div>
     </header>
 <main class="container">
-  <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
-    <div class="col-lg-6 px-0">
-      <h1 class="display-4 fst-italic">Thumbnail</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>
+  <div class="mb-4 rounded text-body-emphasis bg-body-secondary">
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="data:image/jpeg;base64,${ upload1 }" class="d-block w-100" alt="upload1">
     </div>
+    <div class="carousel-item">
+      <img src="data:image/jpeg;base64,${ upload2 }" class="d-block w-100" alt="upload2">
+    </div>
+    <div class="carousel-item">
+      <img src="data:image/jpeg;base64,${ upload3 }" class="d-block w-100" alt="upload3">
+    </div>
+    <div class="carousel-item">
+      <img src="data:image/jpeg;base64,${ upload4 }" class="d-block w-100" alt="upload4">
+    </div>
+    <div class="carousel-item">
+      <img src="data:image/jpeg;base64,${ upload5 }" class="d-block w-100" alt="upload5">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
   </div>
 
   <div class="row g-5">

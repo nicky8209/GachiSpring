@@ -1,5 +1,6 @@
 package sample.spring.yse;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.Base64Utils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,6 +29,7 @@ public class ItemController {
 	public ModelAndView createPost(@RequestParam Map<String, Object> map) {
 		ModelAndView mav = new ModelAndView();
 
+		System.out.println(map);
 		String itemId = this.itemService.create(map);
 		if (itemId == null) {
 			mav.setViewName("redirect:/create");
@@ -44,6 +47,12 @@ public class ItemController {
 		Map<String, Object> cid = this.itemService.postercid(detailMap);
 
 		ModelAndView mav = new ModelAndView();
+
+		for (int i = 0; i < 5; i++) {
+			String blobToBase64 = Base64Utils.encodeToString((byte[]) detailMap.get("upload" + (i + 1)));
+			mav.addObject("upload" + (i + 1), blobToBase64);
+
+		}
 
 		mav.addObject("data", detailMap);
 		String itemId = map.get("itemId").toString();

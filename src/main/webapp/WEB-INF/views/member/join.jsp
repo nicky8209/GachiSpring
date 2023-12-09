@@ -98,7 +98,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="modals.css" rel="stylesheet">
+    <link href="checkout.css" rel="stylesheet">
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -180,7 +180,8 @@
   </symbol>
 </svg>
 
-<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content rounded-4 shadow">
       <div class="modal-header p-5 pb-4 border-bottom-0">
@@ -233,6 +234,18 @@
   </div>
 </div>
 <script src="${pageContext.request.contextPath}/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var exampleModal = new bootstrap.Modal(document.getElementById('exampleModal'), {})
+  exampleModal.show()
 
-    <script src="checkout.js"></script></body>
+    var myModalEl = document.getElementById('exampleModal')
+myModalEl.addEventListener('hidden.bs.modal', function (event) {
+    // 모달이 닫힐 때 다른 페이지로 리디렉션합니다.
+    window.location.href = 'list';
+  // do something...
+})
+        
+    </script>
+
+    </body>
 </html>

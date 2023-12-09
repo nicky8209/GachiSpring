@@ -174,6 +174,7 @@
         <div class="text-end">
         <c:if test="${member == null}">
           <a href="/login" class="btn btn-light text-dark me-2">로그인</a>
+          <!-- Button trigger modal -->
           <a href="/join" class="btn btn-outline-primary">가입하기</a>
           </c:if>
 

@@ -48,10 +48,14 @@ public class ItemController {
 		ModelAndView mav = new ModelAndView();
 
 		for (int i = 0; i < 5; i++) {
-			String blobToBase64 = Base64Utils.encodeToString((byte[]) detailMap.get("upload" + (i + 1)));
-			mav.addObject("upload" + (i + 1), blobToBase64);
+			if (detailMap.get("upload" + (i + 1)) != null) {
+				String blobToBase64 = Base64Utils.encodeToString((byte[]) detailMap.get("upload" + (i + 1)));
+				mav.addObject("upload" + (i + 1), blobToBase64);
+
+			}
 
 		}
+		System.out.println(mav);
 
 		mav.addObject("data", detailMap);
 		String itemId = map.get("itemId").toString();

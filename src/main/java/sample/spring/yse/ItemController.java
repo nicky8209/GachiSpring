@@ -1,5 +1,6 @@
 package sample.spring.yse;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ItemController {
+	private static final boolean isDebug = true;
 	@Autowired
 	ItemService itemService;
 
@@ -42,25 +44,32 @@ public class ItemController {
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public ModelAndView detail(@RequestParam Map<String, Object> map) {
 		Map<String, Object> detailMap = this.itemService.detail(map);
+		// postercid, title, category, price, insert_date, upload1, upload2, upload3,
+		// upload4, upload5
 
-		Map<String, Object> cid = this.itemService.postercid(detailMap);
+		Map<String, Object> name_postercid = this.itemService.postercid(detailMap);
+		// name
+
+		Map<String, Object> idx = new HashMap<String, Object>();
+		// idx
 
 		ModelAndView mav = new ModelAndView();
 
 		for (int i = 0; i < 5; i++) {
 			if (detailMap.get("upload" + (i + 1)) != null) {
-				String blobToBase64 = Base64Utils.encodeToString((byte[]) detailMap.get("upload" + (i + 1)));
-				mav.addObject("upload" + (i + 1), blobToBase64);
+				idx.put("idx", detailMap.get("upload" + (i + 1)).toString());
 
+				Map<String, Object> idx_image = this.itemService.upload(idx);
+
+				String blobToBase64 = Base64Utils.encodeToString((byte[]) idx_image.get("image"));
+				mav.addObject("upload" + (i + 1), blobToBase64);
 			}
 
 		}
-		System.out.println(mav);
-
 		mav.addObject("data", detailMap);
 		String itemId = map.get("itemId").toString();
 		mav.addObject("itemId", itemId);
-		mav.addObject("name", cid);
+		mav.addObject("name", name_postercid);
 		mav.setViewName("/item/detail");
 		return mav;
 	}

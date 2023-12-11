@@ -74,4 +74,9 @@ public class ItemServiceImpl implements ItemService {
 	public Map<String, Object> postercid(Map<String, Object> map) {
 		return this.itemDao.postercid(map);
 	}
+
+	@Override
+	public Map<String, Object> upload(Map<String, Object> map) {
+		return this.itemDao.upload(map);
+	}
 }

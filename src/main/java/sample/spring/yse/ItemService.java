@@ -25,4 +25,6 @@ public interface ItemService {
 
 	Map<String, Object> postercid(Map<String, Object> map);
 
+	Map<String, Object> upload(Map<String, Object> map);
+
 }

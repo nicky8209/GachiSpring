@@ -194,43 +194,12 @@
     </header>
 <main class="container">
   <div class="mb-4 rounded text-body-emphasis bg-body-secondary">
-<div id="carouselExampleIndicators" class="carousel slide">
-  <div class="carousel-inner">
-        <c:if test="${upload1 != null}">
-    <div class="carousel-item active">
-      <img src="data:image/jpeg;base64,${ upload1 }" class="d-block w-100" alt="upload1">
-    </div>
-          </c:if>
-        <c:if test="${upload2 != null}">
-    <div class="carousel-item active">
-      <img src="data:image/jpeg;base64,${ upload2 }" class="d-block w-100" alt="upload2">
-    </div>
-          </c:if>
-        <c:if test="${upload3 != null}">
-    <div class="carousel-item active">
-      <img src="data:image/jpeg;base64,${ upload3 }" class="d-block w-100" alt="upload3">
-    </div>
-          </c:if>
-        <c:if test="${upload4 != null}">
-    <div class="carousel-item active">
-      <img src="data:image/jpeg;base64,${ upload4 }" class="d-block w-100" alt="upload4">
-    </div>
-          </c:if>
-        <c:if test="${upload5 != null}">
-    <div class="carousel-item active">
-      <img src="data:image/jpeg;base64,${ upload5 }" class="d-block w-100" alt="upload5">
-    </div>
-          </c:if>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+      <img src="data:image/jpeg;base64,${ upload1 }" class="d-block" alt="upload1" width="100" height="100">
+      <img src="data:image/jpeg;base64,${ upload2 }" class="d-block" alt="upload2" width="100" height="100">
+      <img src="data:image/jpeg;base64,${ upload3 }" class="d-block" alt="upload3" width="100" height="100">
+      <img src="data:image/jpeg;base64,${ upload4 }" class="d-block" alt="upload4" width="100" height="100">
+      <img src="data:image/jpeg;base64,${ upload5 }" class="d-block" alt="upload5" width="100" height="100">
+
   </div>
 
   <div class="row g-5">

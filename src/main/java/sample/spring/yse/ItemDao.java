@@ -47,4 +47,8 @@ public class ItemDao {
 		return this.sqlSessionTemplate.selectOne("member.postercid", map);
 	}
 
+	public Map<String, Object> upload(Map<String, Object> map) {
+		return this.sqlSessionTemplate.selectOne("item.upload", map);
+	}
+
 }

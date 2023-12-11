@@ -30,6 +30,17 @@
 	        item_id = #{itemId}			
 	    ]]>
 	</select>
+	<select id="upload" parameterType="hashMap"
+		resultType="hashMap">
+	    <![CDATA[
+	        select
+        image
+	        from
+	        upload
+	        where
+	        idx = #{idx}			
+	    ]]>
+	</select>
 	<update id="update" parameterType="hashMap">
 	    <![CDATA[
 	        update item set 

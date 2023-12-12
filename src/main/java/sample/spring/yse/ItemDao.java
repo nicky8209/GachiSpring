@@ -35,6 +35,7 @@ public class ItemDao {
 	public Map<String, Object> login(Map<String, Object> map) {
 		return this.sqlSessionTemplate.selectOne("member.login", map);
 	}
+
 	public Map<String, Object> salt(Map<String, Object> map) {
 		return this.sqlSessionTemplate.selectOne("member.salt", map);
 	}
